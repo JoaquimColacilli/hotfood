@@ -1,25 +1,27 @@
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   padding: 10px 20px;
   background-color: #ffcd00;
   position: fixed;
+  gap: 50px;
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 117px;
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
-.navbar .logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -35%);
+.logo {
+  display: flex;
+  justify-content: center;
+  transform: translateY(50%);
 }
 
 .navbar .logo img {
-  max-height: 250px;
+  max-height: 150px;
   object-fit: contain;
 }
 
@@ -33,7 +35,7 @@
 .nav-right ul {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 150px;
 }
 
 .navbar nav ul li a {
@@ -47,8 +49,7 @@
 .hero {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 120px 20px 20px;
+  margin-top: 117px; /* Alinea con la altura de la barra de navegación */
 }
 
 .hero-image {
@@ -58,11 +59,10 @@
 .hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 963px) {
   .navbar {
     flex-direction: column;
   }
