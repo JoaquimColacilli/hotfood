@@ -1,3 +1,20 @@
+/* tipografías */
+
+@font-face {
+  font-family: "main";
+  src: url("../../../public/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "graffiti";
+  src: url("../../../public/FREESCPT.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: center;
@@ -9,7 +26,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 117px;
+  height: 145px;
   z-index: 1000;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
 }
@@ -21,7 +38,7 @@
 }
 
 .navbar .logo img {
-  max-height: 150px;
+  max-height: 13rem;
   object-fit: contain;
 }
 
@@ -42,24 +59,103 @@
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   text-transform: uppercase;
+  font-family: "main", sans-serif;
 }
 
+/* Section 1 */
 .hero {
   display: flex;
   justify-content: center;
-  margin-top: 117px; /* Alinea con la altura de la barra de navegación */
+  margin-top: 145px;
 }
 
 .hero-image {
   flex: 1;
+  position: relative;
 }
 
 .hero-image img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* burgas section */
+.chalkboard-section {
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.tilted-text {
+  margin-top: 10rem;
+  font-size: clamp(10rem, 12vw, 11rem);
+  font-family: "graffiti", sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-7deg);
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  font-weight: 100;
+  -webkit-text-stroke: 2.5px black;
+  color: white;
+
+  /* Añadimos la animación */
+  animation: graffiti-draw 1.2s ease-out forwards; /* Duración y efecto de la animación */
+  overflow: hidden; /* Importante para el clip-path */
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -21rem;
+}
+
+.svg-container img {
+  transform: rotate(-6deg);
+  width: 80%;
+  height: auto;
+  opacity: 0.16;
+  max-width: none;
+}
+
+.burger-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.burger-item {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-family: "Chalkboard", sans-serif;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* grafitti animation */
+@keyframes graffiti-draw {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  25% {
+    clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%);
+  }
+  50% {
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  }
+  75% {
+    clip-path: polygon(0 0, 75% 0, 75% 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 @media (max-width: 963px) {
