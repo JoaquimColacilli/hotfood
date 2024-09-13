@@ -93,6 +93,8 @@
 
 .tilted-text {
   margin-top: 10rem;
+  padding-left: 0.5rem; /* Ajusta según necesites */
+  padding-right: 0.5rem; /* Ajusta según necesites */
   font-size: clamp(10rem, 12vw, 11rem);
   font-family: "graffiti", sans-serif;
   letter-spacing: 2px;
@@ -105,9 +107,7 @@
   -webkit-text-stroke: 2.5px black;
   color: white;
 
-  /* Añadimos la animación */
-  animation: graffiti-draw 1.2s ease-out forwards; /* Duración y efecto de la animación */
-  overflow: hidden; /* Importante para el clip-path */
+  animation: graffiti-draw 1.2s ease-out forwards;
 }
 
 .svg-container {
@@ -115,7 +115,7 @@
   justify-content: center;
   position: relative;
   z-index: 1;
-  margin-top: -21rem;
+  margin-top: -19rem;
 }
 
 .svg-container img {
@@ -133,10 +133,142 @@
   margin-top: 1rem;
 }
 
+.burger-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
 .burger-item {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  font-family: "Chalkboard", sans-serif;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 20px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+.burger-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+}
+
+.burger-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.burger-item:hover .burger-image {
+  transform: scale(1.1);
+}
+
+.ingredients-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.burger-item:hover .ingredients-overlay {
+  opacity: 1;
+}
+
+.ingredients-overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.ingredients-overlay li {
+  font-family: "graffiti", sans-serif;
+
+  margin: 5px 0;
+  font-size: 3rem;
+  color: #fff;
+  opacity: 0;
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(odd) {
+  animation: slideInLeft 0.3s forwards ease-out;
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(even) {
+  animation: slideInRight 0.3s forwards ease-out;
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(1) {
+  animation-delay: 0.01s; /* Primer ingrediente aparece casi de inmediato */
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(2) {
+  animation-delay: 0.1s; /* Segundo ingrediente aparece un poco después */
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(3) {
+  animation-delay: 0.2s; /* Tercer ingrediente con un pequeño delay adicional */
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(4) {
+  animation-delay: 0.3s; /* Cuarto ingrediente sigue la secuencia */
+}
+
+.burger-item:hover .ingredients-overlay li:nth-child(5) {
+  animation-delay: 0.4s; /* Quinto ingrediente completa la secuencia */
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.burger-name {
+  margin-top: 0.5rem;
+  font-family: "graffiti", sans-serif;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  -webkit-text-stroke: 1.5px black;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.burger-price {
+  margin: 0.5rem 0;
+  font-family: "graffiti", sans-serif;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  -webkit-text-stroke: 1px black;
+  font-size: 2.5rem;
+  color: #fff;
 }
 
 /* grafitti animation */
@@ -158,6 +290,8 @@
   }
 }
 
+/*  */
+
 @media (max-width: 963px) {
   .navbar {
     flex-direction: column;
@@ -172,5 +306,15 @@
   .hero {
     flex-direction: column;
     align-items: center;
+  }
+
+  .burger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .burger-grid {
+    grid-template-columns: 1fr;
   }
 }
