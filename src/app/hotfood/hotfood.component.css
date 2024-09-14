@@ -148,6 +148,39 @@ nav ul li a:hover {
   margin-top: -19rem;
 }
 
+.tilted-text-chico {
+  padding-left: 0.5rem;
+  padding-right: 2.5rem;
+  font-size: clamp(10rem, 12vw, 11rem);
+  font-family: "graffiti", sans-serif;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+  transform: rotate(-8deg);
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  font-weight: 100;
+  -webkit-text-stroke: 2.5px black;
+  color: white;
+  animation: graffiti-draw 1.2s ease-out forwards;
+}
+
+.svg-container-chico {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -19rem;
+}
+
+.svg-container-chico img {
+  transform: rotate(-6deg);
+  width: 80%;
+  height: auto;
+  opacity: 0.16;
+  max-width: none;
+}
+
 .svg-container img {
   transform: rotate(-6deg);
   width: 80%;
@@ -243,23 +276,23 @@ nav ul li a:hover {
 }
 
 .burger-item:hover .ingredients-overlay li:nth-child(1) {
-  animation-delay: 0.01s; /* Primer ingrediente aparece casi de inmediato */
+  animation-delay: 0.01s;
 }
 
 .burger-item:hover .ingredients-overlay li:nth-child(2) {
-  animation-delay: 0.1s; /* Segundo ingrediente aparece un poco después */
+  animation-delay: 0.1s;
 }
 
 .burger-item:hover .ingredients-overlay li:nth-child(3) {
-  animation-delay: 0.2s; /* Tercer ingrediente con un pequeño delay adicional */
+  animation-delay: 0.2s;
 }
 
 .burger-item:hover .ingredients-overlay li:nth-child(4) {
-  animation-delay: 0.3s; /* Cuarto ingrediente sigue la secuencia */
+  animation-delay: 0.3s;
 }
 
 .burger-item:hover .ingredients-overlay li:nth-child(5) {
-  animation-delay: 0.4s; /* Quinto ingrediente completa la secuencia */
+  animation-delay: 0.4s;
 }
 
 @keyframes slideInLeft {
@@ -323,7 +356,33 @@ nav ul li a:hover {
   }
 }
 
-/*  */
+/* TEXTO VEGANO */
+.vegan-text {
+  font-family: "main", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.5;
+  transition: color 0.4s; /* Para animar el color si lo deseas */
+}
+
+.vegan-section {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  border: 0.1px solid #ffd90063;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.089);
+  transition: transform 0.4s, box-shadow 0.4s;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
+  margin: 10rem auto;
+  max-width: 50%;
+}
 
 @media (max-width: 963px) {
   .navbar {
