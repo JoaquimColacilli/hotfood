@@ -244,7 +244,7 @@ nav ul li a:hover {
 }
 
 .burger-image {
-  max-width: 70%;
+  max-width: 90%;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s;
@@ -404,7 +404,7 @@ nav ul li a:hover {
   transition: transform 0.4s, box-shadow 0.4s;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3rem;
-  margin: 10rem auto;
+  margin: 5rem auto;
   max-width: 50%;
 }
 
