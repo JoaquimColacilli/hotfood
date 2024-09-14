@@ -21,14 +21,44 @@
   align-items: flex-end;
   padding: 10px 20px;
   background-color: #ffcd00;
-  position: fixed;
+  position: sticky;
   gap: 50px;
   top: 0;
   left: 0;
   right: 0;
-  height: 145px;
+  height: 105px;
   z-index: 1000;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: black;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.3s;
+}
+nav ul li a:hover {
+  color: #555;
 }
 
 .logo {
@@ -38,7 +68,7 @@
 }
 
 .navbar .logo img {
-  max-height: 13rem;
+  max-height: 10rem;
   object-fit: contain;
 }
 
@@ -68,7 +98,7 @@
 .hero {
   display: flex;
   justify-content: center;
-  margin-top: 145px;
+  /* margin-top: 105px; */
 }
 
 .hero-image {
@@ -93,8 +123,8 @@
 
 .tilted-text {
   margin-top: 10rem;
-  padding-left: 0.5rem; /* Ajusta según necesites */
-  padding-right: 0.5rem; /* Ajusta según necesites */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   font-size: clamp(10rem, 12vw, 11rem);
   font-family: "graffiti", sans-serif;
   letter-spacing: 2px;
@@ -138,7 +168,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   justify-items: center;
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 
 .burger-item {
@@ -157,7 +187,7 @@
 }
 
 .burger-image {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   border-radius: 10px;
   transition: transform 0.3s;
@@ -196,12 +226,13 @@
 
 .ingredients-overlay li {
   font-family: "graffiti", sans-serif;
-
   margin: 5px 0;
   font-size: 3rem;
   color: #fff;
   opacity: 0;
 }
+
+/* BURGER TEXT ANIMATION */
 
 .burger-item:hover .ingredients-overlay li:nth-child(odd) {
   animation: slideInLeft 0.3s forwards ease-out;
@@ -260,7 +291,7 @@
   -webkit-text-stroke: 1.5px black;
   font-size: 3rem;
   color: #fff;
-  z-index: 99999999999;
+  z-index: 9;
 }
 
 .burger-price {
@@ -270,7 +301,7 @@
   -webkit-text-stroke: 1px black;
   font-size: 2.5rem;
   color: #fff;
-  z-index: 99999999999;
+  z-index: 9;
 }
 
 /* grafitti animation */
