@@ -1,4 +1,4 @@
-/* tipografías */
+/* Tipografías */
 
 @font-face {
   font-family: "main";
@@ -34,7 +34,6 @@
   justify-content: center;
   align-items: flex-end;
   padding: 10px 20px 10px 75px;
-
   background-color: #ffcd00;
   position: sticky;
   gap: 50px;
@@ -50,6 +49,7 @@ nav.stroke ul li a,
 nav.fill ul li a {
   position: relative;
 }
+
 nav.stroke ul li a:after,
 nav.fill ul li a:after {
   position: absolute;
@@ -63,6 +63,7 @@ nav.fill ul li a:after {
   background: black;
   height: 1px;
 }
+
 nav.stroke ul li a:hover:after {
   width: 100%;
 }
@@ -72,6 +73,7 @@ nav ul li a:after,
 nav ul li a:before {
   transition: all 0.3s;
 }
+
 nav ul li a:hover {
   color: #555;
 }
@@ -116,7 +118,6 @@ nav ul li a:hover {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
   position: relative;
   z-index: 1;
 }
@@ -128,7 +129,6 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   height: 100px;
-
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   z-index: 2;
 }
@@ -181,7 +181,6 @@ nav ul li a:hover {
   border: none;
   border-top: 2px solid white;
   width: 50%;
-
   margin: 10px auto;
 }
 
@@ -206,7 +205,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* burgas section */
+/* Burgas section */
 .chalkboard-section {
   padding: 2rem;
   text-align: center;
@@ -218,7 +217,11 @@ nav ul li a:hover {
   margin-top: 10rem;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  font-size: clamp(9rem, 11vw, 10rem);
+  font-size: clamp(
+    4rem,
+    6vw,
+    10rem
+  ); /* Ajuste del tamaño para mantenerlo dentro del SVG */
   font-family: "graffiti", sans-serif;
   letter-spacing: 2px;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
@@ -229,7 +232,6 @@ nav ul li a:hover {
   font-weight: 100;
   -webkit-text-stroke: 2.5px black;
   color: white;
-
   animation: graffiti-draw 1.2s ease-out forwards;
 }
 
@@ -238,21 +240,29 @@ nav ul li a:hover {
   justify-content: center;
   position: relative;
   z-index: 1;
-  margin-top: -19rem;
+  margin-top: -5rem; /* Ajuste de margen para mejor alineación */
 }
 
 .svg-container img {
   transform: rotate(-6deg);
-  width: 80%;
+  width: 100%;
   height: auto;
   opacity: 0.25;
   max-width: none;
+  position: absolute; /* Posiciona el SVG detrás del texto */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg); /* Centra el SVG detrás del texto */
 }
 
 .tilted-text-chico {
   padding-left: 0.5rem;
   padding-right: 2.5rem;
-  font-size: clamp(10rem, 12vw, 11rem);
+  font-size: clamp(
+    3rem,
+    4vw,
+    7rem
+  ); /* Ajuste del tamaño para mantenerlo dentro del SVG */
   font-family: "graffiti", sans-serif;
   letter-spacing: 2px;
   text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
@@ -271,15 +281,19 @@ nav ul li a:hover {
   justify-content: center;
   position: relative;
   z-index: 1;
-  margin-top: -18rem;
+  margin-top: -4rem; /* Ajuste de margen para mejor alineación */
 }
 
 .svg-container-chico img {
   transform: rotate(-6deg);
-  width: 80%;
+  width: 100%;
   height: auto;
   opacity: 0.25;
   max-width: none;
+  position: absolute; /* Posiciona el SVG detrás del texto */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-6deg); /* Centra el SVG detrás del texto */
 }
 
 .burger-list {
@@ -359,8 +373,7 @@ nav ul li a:hover {
   opacity: 0;
 }
 
-/* BURGER TEXT ANIMATION */
-
+/* Animaciones de texto para BURGER */
 .burger-item:hover .ingredients-overlay li:nth-child(odd) {
   animation: slideInLeft 0.3s forwards ease-out;
 }
@@ -431,7 +444,7 @@ nav ul li a:hover {
   z-index: 9;
 }
 
-/* grafitti animation */
+/* Animación de grafiti */
 @keyframes graffiti-draw {
   0% {
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -450,14 +463,14 @@ nav ul li a:hover {
   }
 }
 
-/* TEXTO VEGANO */
+/* Texto vegano */
 .vegan-text {
   font-family: "main", sans-serif;
   color: white;
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.5;
-  transition: color 0.4s; /* Para animar el color si lo deseas */
+  transition: color 0.4s;
 }
 
 .vegan-section {
@@ -475,22 +488,21 @@ nav ul li a:hover {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3rem;
   margin: 5rem auto;
+  margin-bottom: 10rem;
   max-width: 50%;
 }
 
-/* sides */
-
+/* Sides */
 .sides-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   justify-items: center;
-  margin-top: 2.5rem;
+  margin-top: 12rem;
 }
 
 /* Section 2 */
-/* EDICION LIMITADA */
-
+/* Edición limitada */
 .section-2 {
   background-image: url("../../../public/background_section_2.jpg");
   background-size: cover;
@@ -521,7 +533,6 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   height: 100px;
-
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   z-index: 2;
 }
@@ -572,8 +583,7 @@ nav ul li a:hover {
   align-items: center;
 }
 
-/* SECTION 3 */
-
+/* Section 3 */
 .section-3 {
   background-image: url("../../../public/background.jpg");
   background-size: cover;
@@ -606,7 +616,6 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   height: 100px;
-
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   z-index: 2;
 }
@@ -615,7 +624,6 @@ nav ul li a:hover {
   display: flex;
   gap: 2rem;
   max-width: 80%;
-  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -655,9 +663,8 @@ nav ul li a:hover {
   grid-template-rows: auto auto;
   justify-items: center;
   align-items: start;
-  position: relative;
 }
-
+/* Continuación de la Sección 3 */
 .polaroid-top {
   grid-column: 1;
   grid-row: 1;
@@ -702,8 +709,7 @@ nav ul li a:hover {
   text-shadow: 10px 10px 12px rgba(0, 0, 0, 0.8);
 }
 
-/* SECTION 4 */
-
+/* Section 4 */
 .section-4 {
   background-image: url("../../../public/background.jpg");
   background-size: cover;
@@ -736,7 +742,6 @@ nav ul li a:hover {
   left: 0;
   right: 0;
   height: 100px;
-
   background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
   z-index: 2;
 }
@@ -768,8 +773,7 @@ nav ul li a:hover {
   margin-bottom: 4rem;
 }
 
-/* FOOTER */
-
+/* Footer */
 .footer-section {
   background-image: url("../../../public/background_hotfood.jpg");
   background-size: cover;
@@ -820,13 +824,11 @@ nav ul li a:hover {
 .footer-contact,
 .footer-work {
   z-index: 90;
-
   flex: 1;
 }
 
 .footer-logo img {
   z-index: 90;
-
   max-height: 10rem;
   margin-bottom: 10px;
   filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.8));
@@ -834,7 +836,6 @@ nav ul li a:hover {
 
 .footer-logo p {
   z-index: 90;
-
   font-size: 1.5rem;
   color: #ffcd00;
   font-family: "italic", sans-serif;
@@ -844,7 +845,6 @@ nav ul li a:hover {
 .footer-contact h2,
 .footer-work h2 {
   z-index: 90;
-
   font-family: "text-2", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 10px;
@@ -852,7 +852,6 @@ nav ul li a:hover {
 
 .footer-icons {
   z-index: 90;
-
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -876,7 +875,6 @@ nav ul li a:hover {
 
 .footer-work p {
   z-index: 90;
-
   font-family: "text-2", sans-serif;
 }
 
@@ -908,11 +906,12 @@ nav ul li a:hover {
     brightness(105%) contrast(105%);
 }
 
-/* MEDIA QUERIES */
-
-@media (max-width: 963px) {
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
   .navbar {
     flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
 
   .nav-left,
@@ -927,42 +926,354 @@ nav ul li a:hover {
   }
 
   .burger-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 768px) {
+  .tilted-text {
+    margin-top: 3rem;
+    font-size: clamp(
+      2rem,
+      5vw,
+      4rem
+    ); /* Ajuste del tamaño para mantener en una línea */
+    -webkit-text-stroke: 0px;
+    letter-spacing: 1px;
+    white-space: nowrap; /* Mantiene el texto en una sola línea */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Evita cortes bruscos */
+  }
+
+  .tilted-text-chico {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Ajuste del tamaño */
+    margin-top: 2rem;
+    -webkit-text-stroke: 0px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .limited-edition-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .burger-item {
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .content-container {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+    padding: 0 10px;
   }
 
   .text-section {
     text-align: center;
     margin-bottom: 20px;
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    line-height: 1.5;
+    white-space: nowrap;
   }
 
-  .image-section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .polaroid-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
 
   .polaroid {
     margin: 10px;
-    transform: rotate(-8deg);
-
     transform: none;
+    max-width: 90%;
+    height: auto;
+  }
+
+  .footer-section {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .footer-icons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .map-iframe {
+    width: 100%;
+    height: 300px;
+    margin-top: 1rem;
   }
 }
 
-@media (max-width: 600px) {
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
   .burger-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tilted-text {
+    font-size: clamp(3rem, 5vw, 6rem);
+    margin-top: 5rem;
+    -webkit-text-stroke: 0px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+  }
+
+  .tilted-text-chico {
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    margin-top: 2rem;
+    -webkit-text-stroke: 0px;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+  }
+
+  .svg-container,
+  .svg-container-chico {
+    margin-top: -3rem;
+    width: 90%;
+  }
+
+  .vegan-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    max-width: 80%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .limited-edition-title {
+    padding-top: 3rem;
+    font-size: clamp(2rem, 5vw, 5rem);
+    white-space: nowrap;
+  }
+
+  .polaroid-container {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
-.text-wrap {
-  position: relative;
-  text-align: center;
+/* Pantallas grandes (escritorios y superiores) */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .tilted-text {
+    -webkit-text-stroke: 0px;
+    font-size: clamp(5rem, 6vw, 7rem);
+    white-space: nowrap;
+  }
+
+  .tilted-text-chico {
+    -webkit-text-stroke: 0px;
+    font-size: clamp(4rem, 5vw, 6rem);
+    white-space: nowrap;
+  }
+
+  .vegan-section {
+    margin-bottom: 1rem;
+    padding: 2rem;
+  }
+
+  .sides-grid {
+    margin-top: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-container {
+    gap: 2rem;
+  }
+
+  .map-iframe {
+    width: 80%;
+    height: 350px;
+  }
+
+  .burger-item {
+    max-width: 300px;
+  }
+}
+
+/* Pantallas grandes (hasta 1500px) */
+@media (max-width: 1500px) {
+  .content-container {
+    display: block;
+  }
+  .text-section {
+    text-align: center;
+    font-size: clamp(
+      1rem,
+      2vw,
+      1.2rem
+    ); /* Ajuste dinámico del tamaño del texto */
+    padding: 0 2rem;
+  }
+
+  .quienes-somos-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* Ajuste dinámico del título */
+    margin-bottom: 1rem;
+  }
+
+  .quienes-somos-text {
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Ajuste del tamaño del texto */
+    line-height: 1.4;
+    margin-bottom: 2rem;
+  }
+
+  .polaroid-container {
+    grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
+  }
+
+  .polaroid {
+    width: 100%; /* Ajuste del tamaño para mantener proporción */
+    max-width: 320px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    filter: grayscale(1.2);
+    margin: 15px;
+  }
+
+  /* Ajustes de las imágenes en la Sección 3 */
+  .polaroid-top,
+  .polaroid-middle,
+  .polaroid-bottom {
+    transform: rotate(0deg); /* Remueve la rotación para un mejor ajuste */
+    margin-top: 0;
+  }
+}
+
+/* Pantallas medianas (entre 1000px y 1499px) */
+@media (max-width: 1000px) {
+  .text-section {
+    text-align: center;
+    font-size: clamp(
+      1rem,
+      2vw,
+      1.2rem
+    ); /* Ajuste dinámico del tamaño del texto */
+    padding: 0 2rem;
+  }
+  .polaroid {
+    width: 80%; /* Ajuste del tamaño para mantener proporción */
+    max-width: 320px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    filter: grayscale(1.2);
+    margin: 15px;
+  }
+
+  .polaroid-container {
+    grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
+  }
+
+  .content-container {
+    display: block;
+  }
+}
+
+/* Pantallas pequeñas (menos de 600px) */
+@media (max-width: 600px) {
+  .content-container {
+    display: block; /* Permite que los elementos se apilen verticalmente */
+  }
+
+  .text-section {
+    text-align: center;
+    font-size: clamp(
+      0.9rem,
+      3vw,
+      1.1rem
+    ); /* Ajuste más pequeño para pantallas reducidas */
+    padding: 0 1rem; /* Reducción de padding para mantener el contenido centrado */
+    white-space: normal;
+  }
+
+  .quienes-somos-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Ajuste dinámico del título */
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .quienes-somos-text {
+    font-size: clamp(0.9rem, 3vw, 1.1rem); /* Ajuste del tamaño del texto */
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: center; /* Centrado del texto para pantallas pequeñas */
+  }
+
+  .polaroid {
+    width: 90%; /* Ajuste del tamaño para mantener proporción en pantallas pequeñas */
+    max-width: 280px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+    filter: grayscale(1.2);
+    margin: 10px auto; /* Ajusta los márgenes para centrar las imágenes */
+  }
+
+  /* Ajustes de las imágenes en la Sección 3 */
+  .polaroid-top,
+  .polaroid-middle,
+  .polaroid-bottom {
+    transform: rotate(0deg); /* Remueve la rotación para un mejor ajuste */
+    margin-top: 0;
+  }
+}
+
+/* Pantallas muy pequeñas (móviles pequeños) */
+@media (max-width: 480px) {
+  .tilted-text {
+    font-size: clamp(2rem, 4vw, 5rem);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .tilted-text-chico {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+
+  .svg-container,
+  .svg-container-chico {
+    margin-top: -2rem;
+    width: 100%;
+  }
+
+  .hero-image .overlay-text {
+    padding: 0 5px;
+  }
+
+  .text-section {
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
+
+/* Pantallas grandes (mayor a 1200px) */
+@media (min-width: 1200px) {
+  .tilted-text {
+    -webkit-text-stroke: 0px;
+    white-space: nowrap;
+  }
+
+  .tilted-text-chico {
+    -webkit-text-stroke: 0px;
+    white-space: nowrap;
+  }
+
+  .sides-grid {
+    margin-top: 4rem;
+  }
+
+  .burger-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
