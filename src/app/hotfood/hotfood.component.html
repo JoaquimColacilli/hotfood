@@ -2,7 +2,7 @@
   <nav class="nav-left stroke">
     <ul>
       <li><a href="#menu">Menu</a></li>
-      <li><a href="#nosotros" style="margin-right: 3rem">Nosotros</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
     </ul>
   </nav>
 
@@ -16,6 +16,19 @@
       <li><a href="#ubicacion">Ubicación</a></li>
     </ul>
   </nav>
+
+  <div class="hamburger-menu" (click)="toggleMenu()">
+    <img src="hamburguesa_menu.svg" alt="Menú" />
+  </div>
+</div>
+
+<div class="mobile-nav" [ngClass]="{ show: isMenuOpen }">
+  <ul>
+    <li><a href="#menu" (click)="toggleMenu()">Menu</a></li>
+    <li><a href="#nosotros" (click)="toggleMenu()">Nosotros</a></li>
+    <li><a href="#novedades" (click)="toggleMenu()">Novedades</a></li>
+    <li><a href="#ubicacion" (click)="toggleMenu()">Ubicación</a></li>
+  </ul>
 </div>
 
 <section class="section-1">

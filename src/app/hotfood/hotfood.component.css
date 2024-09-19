@@ -89,10 +89,12 @@ nav ul li a:hover {
   object-fit: contain;
 }
 
-.nav-left,
+.nav-left {
+  margin-right: 6%;
+}
+
 .nav-right {
-  display: flex;
-  gap: 30px;
+  margin-left: 3%;
 }
 
 .nav-left ul,
@@ -106,9 +108,62 @@ nav ul li a:hover {
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.3rem;
   text-transform: uppercase;
   font-family: "main", sans-serif;
+}
+
+.hamburger-menu {
+  display: none; /* Se oculta por defecto */
+  cursor: pointer;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 105px; /* Adjust as needed */
+  right: 0;
+  background-color: #ffcd00;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  z-index: 999;
+
+  /* Animation properties */
+  opacity: 0;
+  transform: translateY(-20px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  /* Prevent clicks when not visible */
+  pointer-events: none;
+}
+
+/* Show the mobile nav with animation */
+.mobile-nav.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Rest of your mobile nav styles */
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
+.mobile-nav ul li {
+  padding: 10px 0;
+}
+
+.mobile-nav ul li a {
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "main", sans-serif;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 /* Section 1 */
@@ -173,7 +228,7 @@ nav ul li a:hover {
 
 .overlay-text h1 {
   font-family: "main", sans-serif;
-  font-size: 6rem;
+  font-size: clamp(2rem, 5vw, 6rem);
   margin: 0;
 }
 
@@ -187,7 +242,7 @@ nav ul li a:hover {
 .overlay-text p {
   font-family: "graffiti", sans-serif;
   margin: 0;
-  font-size: 4rem;
+  font-size: clamp(1rem, 4vw, 5rem);
   color: #ffcd00;
 }
 
@@ -909,15 +964,8 @@ nav ul li a:hover {
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
-    height: auto;
-    padding: 10px;
-  }
-
-  .nav-left,
-  .nav-right {
-    flex-direction: column;
-    align-items: center;
+    padding: 5px 5px 5px 45px;
+    gap: 20px;
   }
 
   .hero {
@@ -927,30 +975,6 @@ nav ul li a:hover {
 
   .burger-grid {
     grid-template-columns: 1fr;
-  }
-
-  .tilted-text {
-    margin-top: 3rem;
-    font-size: clamp(
-      2rem,
-      5vw,
-      4rem
-    ); /* Ajuste del tamaño para mantener en una línea */
-    -webkit-text-stroke: 0px;
-    letter-spacing: 1px;
-    white-space: nowrap; /* Mantiene el texto en una sola línea */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Evita cortes bruscos */
-  }
-
-  .tilted-text-chico {
-    font-size: clamp(1.5rem, 4vw, 3rem); /* Ajuste del tamaño */
-    margin-top: 2rem;
-    -webkit-text-stroke: 0px;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .limited-edition-title {
@@ -1018,26 +1042,9 @@ nav ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tilted-text {
-    font-size: clamp(3rem, 5vw, 6rem);
-    margin-top: 5rem;
-    -webkit-text-stroke: 0px;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-  }
-
-  .tilted-text-chico {
-    font-size: clamp(2.5rem, 4vw, 4.5rem);
-    margin-top: 2rem;
-    -webkit-text-stroke: 0px;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-  }
-
   .svg-container,
   .svg-container-chico {
-    margin-top: -3rem;
-    width: 90%;
+    display: none;
   }
 
   .vegan-section {
@@ -1066,19 +1073,37 @@ nav ul li a:hover {
 /* Pantallas grandes (escritorios y superiores) */
 @media (max-width: 1200px) {
   .navbar {
-    padding: 10px 20px;
+    padding: 10px 10px 10px 65px;
+    gap: 30px;
   }
 
-  .tilted-text {
-    -webkit-text-stroke: 0px;
-    font-size: clamp(5rem, 6vw, 7rem);
-    white-space: nowrap;
+  .navbar .logo img {
+    max-height: 8rem;
+    object-fit: contain;
   }
 
-  .tilted-text-chico {
-    -webkit-text-stroke: 0px;
-    font-size: clamp(4rem, 5vw, 6rem);
-    white-space: nowrap;
+  .nav-left {
+    margin-right: 4%;
+  }
+
+  .nav-right {
+    margin-left: 1%;
+  }
+
+  .nav-left ul,
+  .nav-right ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+  }
+
+  .navbar nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: "main", sans-serif;
   }
 
   .vegan-section {
@@ -1225,6 +1250,11 @@ nav ul li a:hover {
     transform: rotate(0deg); /* Remueve la rotación para un mejor ajuste */
     margin-top: 0;
   }
+
+  .svg-container,
+  .svg-container-chico {
+    display: none;
+  }
 }
 
 /* Pantallas muy pequeñas (móviles pequeños) */
@@ -1260,12 +1290,11 @@ nav ul li a:hover {
 /* Pantallas grandes (mayor a 1200px) */
 @media (min-width: 1200px) {
   .tilted-text {
-    -webkit-text-stroke: 0px;
-    white-space: nowrap;
+    -webkit-text-stroke: 2px;
   }
 
   .tilted-text-chico {
-    -webkit-text-stroke: 0px;
+    -webkit-text-stroke: 2px;
     white-space: nowrap;
   }
 
@@ -1275,5 +1304,47 @@ nav ul li a:hover {
 
   .burger-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 880px) {
+  /* Style the navbar container */
+  .navbar {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .nav-left,
+  .nav-right {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    transform: translateY(0%);
+  }
+
+  .logo img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    width: auto;
+  }
+
+  .hamburger-menu img {
+    height: 50px;
+    width: auto;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+  .mobile-nav.show {
+    display: block;
   }
 }

@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-hotfood',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './hotfood.component.html',
   styleUrl: './hotfood.component.css',
 })
-export class HotfoodComponent {}
+export class HotfoodComponent {
+  isMenuOpen = false;
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+}
