@@ -126,6 +126,7 @@ nav ul li a:hover {
   width: 100%;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
   z-index: 999;
+  position: fixed;
 
   /* Animation properties */
   opacity: 0;
@@ -190,12 +191,14 @@ nav ul li a:hover {
 
 .hero {
   display: flex;
-  justify-content: center;
+  overflow: hidden;
   position: relative;
 }
 
 .hero-image {
-  position: relative;
+  min-width: 33.33%; /* Cada imagen ocupa el 100% del contenedor */
+  max-width: 33.33%;
+  transition: transform 0.5s ease-in-out;
   overflow: hidden;
 }
 
@@ -816,6 +819,7 @@ nav ul li a:hover {
   font-size: 1.5rem;
   line-height: 1.5;
   text-shadow: 10px 10px 12px rgba(0, 0, 0, 0.8);
+  text-align: center;
 }
 
 .map-iframe {
@@ -961,6 +965,36 @@ nav ul li a:hover {
     brightness(105%) contrast(105%);
 }
 
+.carousel-mode .hero-image {
+  flex: none;
+  min-width: 100%;
+
+  max-width: 100%;
+  display: block;
+
+  object-fit: cover;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nav-button.prev {
+  left: 10px;
+}
+
+.nav-button.next {
+  right: 10px;
+}
+
 /* Pantallas pequeñas (móviles) */
 @media (max-width: 600px) {
   .navbar {
@@ -1054,8 +1088,11 @@ nav ul li a:hover {
   }
 
   .footer-container {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-direction: row; /* Alinea los elementos en forma de columna */
+    align-items: center; /* Alinea los elementos en el centro */
+    justify-content: center; /* Centra los elementos verticalmente */
+    gap: 20px; /* Espacio entre cada div */
   }
 
   .limited-edition-title {

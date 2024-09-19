@@ -32,10 +32,11 @@
 </div>
 
 <section class="section-1">
-  <div class="hero">
+  <div class="hero" [ngClass]="{ 'carousel-mode': isCarousel }">
     <div class="hero-image">
       <img src="burga_1_inicio.jpg" alt="Burger 1" />
     </div>
+
     <div class="hero-image">
       <img src="dueño_inicio.jpg" alt="Chef" />
       <div class="overlay-text">
@@ -47,6 +48,22 @@
     <div class="hero-image">
       <img src="burga_2_inicio.jpg" alt="Burger 2" />
     </div>
+
+    <!-- Botones de navegación visibles solo en modo carrusel -->
+    <button
+      *ngIf="isCarousel"
+      class="nav-button prev"
+      (click)="navigate('prev')"
+    >
+      ❮
+    </button>
+    <button
+      *ngIf="isCarousel"
+      class="nav-button next"
+      (click)="navigate('next')"
+    >
+      ❯
+    </button>
   </div>
 
   <div class="chalkboard-section">
