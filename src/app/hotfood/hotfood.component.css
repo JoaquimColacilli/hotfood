@@ -1291,34 +1291,6 @@ nav ul li a:hover {
 }
 
 /* Pantallas muy pequeñas (móviles pequeños) */
-@media (max-width: 480px) {
-  .tilted-text {
-    font-size: clamp(2rem, 4vw, 5rem);
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-
-  .tilted-text-chico {
-    font-size: clamp(1.5rem, 3vw, 4rem);
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-  }
-
-  .svg-container,
-  .svg-container-chico {
-    margin-top: -2rem;
-    width: 100%;
-  }
-
-  .hero-image .overlay-text {
-    padding: 0 5px;
-  }
-
-  .text-section {
-    font-size: 0.9rem;
-    white-space: nowrap;
-  }
-}
 
 /* Pantallas grandes (mayor a 1200px) */
 @media (min-width: 1200px) {
