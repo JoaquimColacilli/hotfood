@@ -1385,3 +1385,106 @@ nav ul li a:hover {
     display: block;
   }
 }
+
+/* ... */
+
+/* Animación de aparición desde la parte superior para los elementos de hamburguesas */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.section-1 .hero,
+.section-1 .chalkboard-section,
+.section-1 .vegan-section,
+.section-2 .limited-edition-title,
+.section-2 .image-container,
+.section-3 .text-section,
+.section-3 .polaroid-container,
+.section-4 .nuestro-local-title,
+.section-4 .nuestro-local-text,
+.section-4 .map-iframe,
+.footer-section .footer-contact,
+.footer-section .footer-logo,
+.footer-section .footer-work {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.animate {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.burger-grid .burger-item {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDown 0.5s ease-out forwards;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.burger-grid .burger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.burger-grid .burger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.burger-grid .burger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.burger-grid .burger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.burger-grid .burger-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.burger-grid .burger-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Animaciones secuenciales para los elementos dentro de .sides-grid */
+.sides-grid .burger-item {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideDown 0.5s ease-out forwards;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+.sides-grid .burger-item:nth-child(1) {
+  animation-delay: 0.7s;
+}
+
+.sides-grid .burger-item:nth-child(2) {
+  animation-delay: 0.8s;
+}
+
+.sides-grid .burger-item:nth-child(3) {
+  animation-delay: 0.9s;
+}
